@@ -55,3 +55,28 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#node components
+chatroom/static/node_modules/
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.env
+
+# Mac
+.DS_Store
+._*
+
+# SQLite3 database files:
+*.db
