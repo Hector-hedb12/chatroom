@@ -13,9 +13,16 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import patterns, url, include
 from django.contrib import admin
 
-urlpatterns = [
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
-]
+    url(r'^$', 'core.views.home', name='home'),
+    url(r'^node_api$', 'core.views.node_api', name='node_api'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login',
+        {'template_name': 'admin/login.html'}, name='login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',
+        {'next_page': '/'}, name='logout'),
+)
